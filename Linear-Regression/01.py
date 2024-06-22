@@ -20,5 +20,5 @@ bias_range = np.linspace(-0.3, 1.5, 100)
 # and pass them to calculate the costs
 W, B, cost_history = linear.generate_costs_forContour(X, y, weigths_range, bias_range)
 
-# finally, plot them to visualization
+# finally, plot them for the visualization
 Plot_optimizationAndContour(predictions, X, y, w_history, b_history, W, B, cost_history)
