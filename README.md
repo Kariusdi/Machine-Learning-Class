@@ -1,1 +1,1 @@
-# This repository is for my ML class as a senior year. 🤯
+# Machine Learning class 2024 🤯
