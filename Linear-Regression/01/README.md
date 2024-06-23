@@ -1,4 +1,4 @@
-## <mark>1). Create the representation of the simple linear regression by visualize it as a graph and a cost function contour to show the steps of gradient descent.</mark>
+## 1). Create the representation of the simple linear regression by visualize it as a graph and a cost function contour to show the steps of gradient descent.
 
 - เขียนโปรแกรมสำหรับสร้างแบบจำลองเชิงเส้นด้วยวิธีลดตามความชัน พร้อมทั้งแสดงฟังก์ชันค่าใช้จ่ายในรูปของคอนทัวร์และแสดงให้เห็นถึงขั้นตอนในการปรับพารามิเตอร์ (Lecture หน้าที่ 49)
 
@@ -16,7 +16,9 @@ y = np.array([0, 2])
 
 ### Let's start! 🚀
 
-## Step 1 (Representation)
+</br>
+
+## <mark>Step 1 (Representation)</mark>
 
 From the dataset, we have just 1 feature that means our weigth is only one. So we can use the linear regression equation as
 
@@ -33,7 +35,9 @@ After that, we can create the prediction formular as a metrix form in python.
         return np.dot(X, self.weights) + self.bias
 ```
 
-## Step 2
+</br>
+
+## <mark>Step 2</mark>
 
 But now if we use this immediately with weigth equals to 0 and bias equals to 0 (As I have mentioned before, the initailize of them are 0). The linear line would be the horizontal line like this. And the MSE would be so high as the error value.
 
@@ -77,7 +81,9 @@ The point of this step is to update the new weigth and bias for fitting the data
 ![lr](../assets/lr.jpeg)
 </br>
 
-## Step 3
+</br>
+
+## <mark>Step 3</mark>
 
 Finally 🎉, after we've done about optimization. We can test our model to see **_"Does it fit the data?"_**.
 
@@ -108,12 +114,16 @@ plt.show()
 
 ```
 
-## Result 🎯
+</br>
+
+## <mark>Result</mark>🎯
 
 ![lr](../assets/representation.png)
 </br>
 
-## Addition Step
+</br>
+
+## <mark>Addition Step</mark>
 
 You may be wondering **_"Could we visualize the gradient descent steps?"_**. I'd say YES! because in the step of updateing weigths and bias. We have collected the history data of them in arrays. So we can use them to make a cost function contour to visualize it.
 
@@ -169,7 +179,9 @@ W, B, cost_history = linear.generate_costs_forContour(X, y, weigths_range, bias_
 Plot_optimizationAndContour(predictions, X, y, w_history, b_history, W, B, cost_history)
 ```
 
-## Addition Step (Result) 🕺
+</br>
+
+## <mark>Addition Step (Result)</mark>🕺
 
 ![lr](../assets/contour.png)
 </br>
