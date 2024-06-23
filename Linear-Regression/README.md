@@ -2,27 +2,49 @@
 
 Linear Regression is the **_Supervised Learning_** that can predict the output as a continuous. For example, if we have gender and heigth as features and weigth as a output. We can use linear regression to predict the weigth when new data has come.
 
-### Recap
-
-### Machine Learning Components are
+### Machine Learning Components
 
 - Representation
 - Evaluation
 - Optimization
 
-## <mark>1). Create the representation of the simple linear regression by visualize it as a graph and a cost function contour to show the steps of gradient descent.</mark>
+![components](./assets/components.jpeg)
+</br>
 
-- เขียนโปรแกรมสำหรับสร้างแบบจำลองเชิงเส้นด้วยวิธีลดตามความชัน พร้อมทั้งแสดงฟังก์ชันค่าใช้จ่ายในรูปของคอนทัวร์และแสดงให้เห็นถึงขั้นตอนในการปรับพารามิเตอร์ (Lecture หน้าที่ 49)
+> these can use to represent the steps of linear regression as well, which are
 
-### Sample Data (โจทย์กำหนด)
+### Steps of linear regression
 
-```python
-X = np.array([[0], [2]])
-y = np.array([0, 2])
+1. **Representaion**: Linear Regression equation
+
+```math
+h(x) = w_0 + w_1 x_1 + w_2 x_2 + ... + w_d x_d
 ```
 
-![sample data](./assets/sample_data.jpeg)
+> where w_0 is a bias, w_d is weigths, and x are features.
 
-### Step of Linear regression
+2. **Evalution**: In this term, we'll use MSE (Mean Squared Error) to define errors of the diff between predicted value and actual value and think how we can optimize weigths to decrease errors.
+
+```math
+\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y_i})^2
+```
+
+> where y_i are the true values (output from dataset) and y_hat are the predicted values that we got from the model.
+
+![MSE](./assets/MSE.jpeg)
+</br>
+
+3. **Optimization**: After we got the model. Of course the predicted values have errors (calculate from MSE that we have mentioned eariler). So we have to optimize the model to fit the data as well as possible.
+
+   - There are 2 optimizations that we're gonna use in this term.
+
+   1. **Normal Equation**: (we're gonna talk about this later)
+   2. **Gradient Descent**: random starter weigth (typically, we're gonna start at 0) and adjust weigth untill errors has been descreased to the minimum.
+      ![gradient](./assets/gradientDescent.jpeg)
+      </br>
 
 ##
+
+## Assignments
+
+### [01](https://duckduckgo.com).
