@@ -116,7 +116,7 @@ plt.show()
 
 </br>
 
-## <mark>Result</mark>🎯
+## <mark>Result</mark> 🎯
 
 ![lr](../assets/representation.png)
 </br>
@@ -181,7 +181,7 @@ Plot_optimizationAndContour(predictions, X, y, w_history, b_history, W, B, cost_
 
 </br>
 
-## <mark>Addition Step (Result)</mark>🕺
+## <mark>Addition Step (Result)</mark> 🕺
 
 ![lr](../assets/contour.png)
 </br>
