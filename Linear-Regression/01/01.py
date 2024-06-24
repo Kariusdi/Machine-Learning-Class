@@ -11,6 +11,7 @@ linear = LinearRegression(lr=0.1, n_iters=100) # start by learning rate sets to 
 linear.training(X, y)                          # optimize by using gradient descent
 predictions = linear.prediction(X)             # get the prediction output after optimization
 w_history, b_history = linear.get_Weigths_Bias_History() # get the value history for visualizing with contour
+c_history = linear.get_Costs_History()
 
 # mock the weigths (wi) and bias (w0) up from w_history and b_history to draw the contour
 weigths_range = np.linspace(-0.3, 1.5, 100)
@@ -33,4 +34,11 @@ plt.scatter(w_history, b_history, color = "b", marker = "o")
 plt.xlabel('weigths')
 plt.ylabel('bias')
 plt.title('Cost Function (MSE) Contour Plot with Gradient Descent Steps')
+
+# visulize error reduction
+plt.figure(figsize=(8,6))
+plt.plot(range(100), c_history);
+plt.xlabel('iterations')
+plt.ylabel('error')
+plt.title('Error Reduction')
 plt.show()
