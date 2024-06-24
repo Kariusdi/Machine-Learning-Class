@@ -22,6 +22,7 @@ class LinearRegression:
         self.n_samples = 0
         self.weights_history = []
         self.bias_history = []
+        self.costs_history = []
      
     # Evaluation + Optimization   
     def training(self, X, y):
@@ -36,6 +37,7 @@ class LinearRegression:
             self.bias -= bias_gradient
             self.weights_history.append(self.weights[0])
             self.bias_history.append(self.bias)
+            self.costs_history.append(costFunction(self.n_samples, y_pred, y));
     
     def generate_costs_forContour(self, X, y, w_range, b_range):
         W, B = np.meshgrid(w_range, b_range)
@@ -52,6 +54,9 @@ class LinearRegression:
     
     def get_Weigths_Bias_History(self):
         return self.weights_history, self.bias_history
+    
+    def get_Costs_History(self):
+        return self.costs_history
 
     # Representation
     def prediction(self, X):

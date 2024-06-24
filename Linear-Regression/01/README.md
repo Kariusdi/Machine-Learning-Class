@@ -118,7 +118,14 @@ plt.show()
 
 ## <mark>Result</mark> 🎯
 
+> Linear Regression Representation
+
 ![lr](../assets/representation.png)
+</br>
+
+> Error Reduction from each iteration
+
+![reduction](../assets/reduction.png)
 </br>
 
 </br>
