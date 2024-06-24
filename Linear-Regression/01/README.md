@@ -37,7 +37,7 @@ After that, we can create the prediction formular as a metrix form in python.
 
 </br>
 
-## <mark>Step 2</mark>
+## <mark>Step 2 (Evaluation + Optimization)</mark>
 
 But now if we use this immediately with weigth equals to 0 and bias equals to 0 (As I have mentioned before, the initailize of them are 0). The linear line would be the horizontal line like this. And the MSE would be so high as the error value.
 
@@ -116,7 +116,7 @@ plt.show()
 
 </br>
 
-## <mark>Result</mark>🎯
+## <mark>Result</mark> 🎯
 
 ![lr](../assets/representation.png)
 </br>
@@ -181,7 +181,7 @@ Plot_optimizationAndContour(predictions, X, y, w_history, b_history, W, B, cost_
 
 </br>
 
-## <mark>Addition Step (Result)</mark>🕺
+## <mark>Addition Step (Result)</mark> 🕺
 
 ![lr](../assets/contour.png)
 </br>

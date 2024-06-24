@@ -11,7 +11,7 @@ Linear Regression is the **_Supervised Learning_** that can predict the output a
 ![components](./assets/components.jpeg)
 </br>
 
-> these can use to represent the steps of linear regression as well, which are
+these can use to represent the steps of linear regression as well, which are
 
 ### Steps of linear regression
 
