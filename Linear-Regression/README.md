@@ -38,8 +38,8 @@ h(x) = w_0 + w_1 x_1 + w_2 x_2 + ... + w_d x_d
 
    - There are 2 optimizations that we're gonna use in this term.
 
-   1. **Normal Equation**: (we're gonna talk about this later)
-   2. **Gradient Descent**: random starter weigth (typically, we're gonna start at 0) and adjust weigth untill errors has been descreased to the minimum.
+      1. **Normal Equation**: (we're gonna talk about this later)
+      2. **Gradient Descent**: random starter weigth (typically, we're gonna start at 0) and adjust weigth untill errors has been descreased to the minimum.
       ![gradient](./assets/gradientDescent.jpeg)
       </br>
 
