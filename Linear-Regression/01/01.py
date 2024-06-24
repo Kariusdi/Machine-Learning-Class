@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from model.LinearRegression import LinearRegression
-from plotter.contour import Plot_optimizationAndContour
 
 X_data = [[0], [2]] # X represents to be a row (samples)
 y_data = [0, 2] # Y represents to be a column (output)
@@ -21,4 +20,17 @@ bias_range = np.linspace(-0.3, 1.5, 100)
 W, B, cost_history = linear.generate_costs_forContour(X, y, weigths_range, bias_range)
 
 # finally, plot them for the visualization
-Plot_optimizationAndContour(predictions, X, y, w_history, b_history, W, B, cost_history)
+plt.figure(figsize=(15,7))
+plt.subplot(1, 2, 1)
+plt.scatter(X[:, 0], y, color = "b", marker = "o", s = 30)
+plt.plot(X, predictions, color='black', linewidth=2, label='Prediction')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Representation After Optimization')
+plt.subplot(1, 2, 2)
+plt.contour(W, B, cost_history)
+plt.scatter(w_history, b_history, color = "b", marker = "o") 
+plt.xlabel('weigths')
+plt.ylabel('bias')
+plt.title('Cost Function (MSE) Contour Plot with Gradient Descent Steps')
+plt.show()
