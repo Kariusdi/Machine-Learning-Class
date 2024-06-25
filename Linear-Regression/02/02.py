@@ -11,6 +11,11 @@ y_data = [0, 2] # Y represents to be a column (output)
 X = np.array(X_data)
 y = np.array(y_data)
 
+# Standardization
+mean_x = np.array([np.mean(X)])
+std_x = np.array([np.std(X)])
+X = (X - mean_x) / std_x
+
 linear = LinearRegression(lr=0.1, n_iters=100) # start by learning rate sets to be 0.1 with number of 100 iterations (less data => high lr)
 linear.training(X, y)                          # optimize by using gradient descent
 predictions = linear.prediction(X)             # get the prediction output after optimization
