@@ -2,7 +2,9 @@
 
 - เขียนโปรแกรมสำหรับสร้างแบบจำลองเชิงเส้นด้วยวิธีลดตามความชัน พร้อมทั้งแสดงฟังก์ชันค่าใช้จ่ายในรูปของคอนทัวร์และแสดงให้เห็นถึงขั้นตอนในการปรับพารามิเตอร์ (Lecture หน้าที่ 49)
 
-> "Note" we're gonna use metrix for calculation instead of loop. And the full code is written as a Class.
+> "Note" we're gonna use metrix for calculation instead of loop. And the full code is written as a Class in the "model" directory.
+> </br>
+> 🫧 And also in the example, there's just 1 feature.
 
 ### Sample Data (โจทย์กำหนด)
 
@@ -14,7 +16,7 @@ y = np.array([0, 2])
 ![sample data](../assets/sample_data.jpeg)
 </br>
 
-### Let's start! 🚀
+## Let's start! 🚀
 
 </br>
 
