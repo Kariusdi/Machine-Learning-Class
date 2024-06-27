@@ -38,13 +38,15 @@ h(x) = w_0 + w_1 x_1 + w_2 x_2 + ... + w_d x_d
 
    - There are 2 optimizations that we're gonna use in this term.
 
-      1. **Normal Equation**: (we're gonna talk about this later)
-      2. **Gradient Descent**: random starter weigth (typically, we're gonna start at 0) and adjust weigth untill errors has been descreased to the minimum.
-      ![gradient](./assets/gradientDescent.jpeg)
-      </br>
+     1. **Normal Equation**: (we're gonna talk about this later)
+     2. **Gradient Descent**: random starter weigth (typically, we're gonna start at 0) and adjust weigth untill errors has been descreased to the minimum.
+        ![gradient](./assets/gradientDescent.jpeg)
+        </br>
 
 ##
 
 ## Assignments
 
 ### [01](https://github.com/Kariusdi/Machine-Learning-Class67/blob/main/Linear-Regression/01/README.md)
+
+### [02](https://github.com/Kariusdi/Machine-Learning-Class67/blob/main/Linear-Regression/02/README.md)
