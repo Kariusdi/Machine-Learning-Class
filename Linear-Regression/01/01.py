@@ -20,8 +20,9 @@ if __name__ == "__main__":
     c_history = linear.get_Costs_History()
 
     # mock the weigths (wi) and bias (w0) up from w_history and b_history to draw the contour
-    weigths_range = np.linspace(-0.3, 1.5, 100)
-    bias_range = np.linspace(-0.3, 1.5, 100)
+    r_min, r_max = -0.3, 1.5
+    weigths_range = np.linspace(r_min, r_max, 100)
+    bias_range = np.linspace(r_min, r_max, 100)
 
     # and pass them to calculate the costs
     W, B, cost_history = linear.generate_costs_forContour(X, y, weigths_range, bias_range)
@@ -35,7 +36,7 @@ if __name__ == "__main__":
     plt.ylabel('Y')
     plt.title('Representation After Optimization')
     plt.subplot(1, 2, 2)
-    plt.contour(W, B, cost_history)
+    plt.contour(W, B, cost_history, cmap='jet')
     plt.scatter(w_history, b_history, color = "b", marker = "o") 
     plt.xlabel('weigths')
     plt.ylabel('bias')

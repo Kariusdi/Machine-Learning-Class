@@ -28,7 +28,7 @@ class LinearRegression:
         self.bias_history = []
         self.costs_history = []
     
-    def standardization(self, X):
+    def standardization(self, X):       # X_std = X - mean of X / standard deviation of X
         mean_x = np.array([np.mean(X)])
         std_x = np.array([np.std(X)])
         X_std = (X - mean_x) / std_x
