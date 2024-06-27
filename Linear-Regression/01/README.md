@@ -120,7 +120,7 @@ plt.show()
 
 > Linear Regression Representation
 
-![lr](../assets/representation.png)
+![lr](../assets/representation01.png)
 </br>
 
 > Error Reduction from each iteration
@@ -190,7 +190,7 @@ Plot_optimizationAndContour(predictions, X, y, w_history, b_history, W, B, cost_
 
 ## <mark>Addition Step (Result)</mark> 🕺
 
-![lr](../assets/contour.png)
+![lr](../assets/contour01.png)
 </br>
 
 As you can see the error is increasing to the minimum (ideal) each step of the weigths have been updated.
