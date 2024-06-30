@@ -16,7 +16,7 @@ if __name__ == "__main__":
     X_std = linear.standardization(X)               # standardize Data (Normalization)
     linear.training(X_std, y, "gradientDes")        # optimize by using gradient descent
     predictions = linear.prediction(X_std)          # get the prediction output after optimization
-    w_history, b_history = linear.get_Weigths_Bias_History() # get the value history for visualizing with contour
+    w_history, b_history = linear.get_Weights_Bias_History() # get the value history for visualizing with contour
     c_history = linear.get_Costs_History()
 
     # mock the weigths (wi) and bias (w0) up from w_history and b_history to draw the contour

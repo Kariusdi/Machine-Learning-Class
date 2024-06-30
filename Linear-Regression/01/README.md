@@ -78,7 +78,7 @@ def training(self, X, y):
 
 The point of this step is to update the new weigth and bias for fitting the data as well as possible. From that we can define the learning rate to tell the model "how fast you want me to go downhills (go to the minimum of error)".
 
-> Warning 🚨 : if we set learning rate to low, the model takes a lot of time to fit the data and wants more iteration. On the other hand, if we set it to high the model would jump across the minimum and hard to fit the model.
+> Warning 🚨 : if we set learning rate too low, the model takes a lot of time to fit the data and wants more iteration. On the other hand, if we set it to high the model would jump across the minimum and hard to fit the model.
 
 ![lr](../assets/lr.jpeg)
 </br>
