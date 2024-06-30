@@ -50,7 +50,7 @@ After we have done the code, so we can actually test it know by comparing with G
 
 ## <mark>Result comparision between "Gradient Descent" and "Normal Equation"</mark>
 
-![lr](../assets/comparision.png)
+![comparision](../assets/comparision.png)
 </br>
 
 As you can see on the fig, The result looks totally the same. But the difference between them is when we are using **"Normal equation"**, we don't have to standardize the data because it calculates with the formular that don't need iterations (X axis is max to 200). On the other hand, **"Gradient Descent"** still needs to be standardized to avoid the complex direction to the minimum of error (X axis is max to the standardize value).
