@@ -50,3 +50,7 @@ h(x) = w_0 + w_1 x_1 + w_2 x_2 + ... + w_d x_d
 ### [01](https://github.com/Kariusdi/Machine-Learning-Class67/blob/main/Linear-Regression/01/README.md)
 
 ### [02](https://github.com/Kariusdi/Machine-Learning-Class67/blob/main/Linear-Regression/02/README.md)
+
+### [03](https://github.com/Kariusdi/Machine-Learning-Class67/blob/main/Linear-Regression/03/README.md)
+
+### [04](https://github.com/Kariusdi/Machine-Learning-Class67/blob/main/Linear-Regression/04/README.md)

@@ -16,7 +16,7 @@ if __name__ == "__main__":
     linear = LinearRegression(lr=0.1, n_iters=100) # start by learning rate sets to be 0.1 with number of 100 iterations (less data => high lr)
     linear.training(X, y, "gradientDes")           # optimize by using gradient descent
     predictions = linear.prediction(X)             # get the prediction output after optimization
-    w_history, b_history = linear.get_Weigths_Bias_History() # get the value history for visualizing with contour
+    w_history, b_history = linear.get_Weights_Bias_History() # get the value history for visualizing with contour
     c_history = linear.get_Costs_History()
 
     # mock the weigths (wi) and bias (w0) up from w_history and b_history to draw the contour
