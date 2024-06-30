@@ -1,3 +1,6 @@
-# Machine Learning class 2024 🤯
+# Machine Learning class 🌊
 
-## [Linear Regression](https://github.com/Kariusdi/Machine-Learning-Class67/tree/main/Linear-Regression)
+## Topics
+
+- [Linear Regression](https://github.com/Kariusdi/Machine-Learning-Class67/tree/main/Linear-Regression)
+- [Performance Estimation](https://github.com/Kariusdi/Machine-Learning-Class67/tree/main/Performance-Estimation)
