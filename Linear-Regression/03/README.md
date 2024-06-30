@@ -44,7 +44,11 @@ for i, alpha in enumerate(alpha): # enumerate = ดึงทั้งค่า i
 
 ## <mark>Result</mark>
 
+<<<<<<< HEAD
 ![lrs](../assets/lrs.png)
+=======
+![lr](../assets/lrs.png)
+>>>>>>> 4ba4662 (:memo: : 03 added.)
 </br>
 
 As you can see, falling down steps of MSE that they're so different for each learning rate. If you set the if we set learning rate too low, the model takes a lot of time to fit the data and wants more iteration. On the other hand, if we set it to high the model would jump across the minimum and hard to fit the model. (Actually, I have explained this in 01 assignment already)
