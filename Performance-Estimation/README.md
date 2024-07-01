@@ -11,7 +11,7 @@ In this chapter, we are going to use WEKA to visualize the performance of ML mod
 ![components](./assets/pre_Ac.jpeg)
 </br>
 
-## <mark>Explaination about RMSE and SD of RMSE that refers to "precision" and "Accuracy"</mark>
+## <mark>Explaination about RMSE and SD of RMSE that refers to "precision" and "accuracy"</mark>
 
 The standard deviation (SD) of RMSE (Root Mean Square Error) can provide insights into the consistency and reliability of a model's performance across different subsets of data. Here’s how to interpret a low SD of RMSE:
 
