@@ -7,10 +7,9 @@ import numpy as np
 from experiments import Initialize_Data
 
 def HoldOut(df, Y_col, testsize):
-    X = df.drop(columns=[Y_col])
-    Y = df[Y_col]
+    X, y = Initialize_Data(df, Y_col)
 
-    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=testsize, random_state=0)
+    X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=testsize, random_state=0)
 
     model = LinearRegression()
     model.fit(X_train, Y_train)
@@ -21,15 +20,14 @@ def HoldOut(df, Y_col, testsize):
     return RMSE
 
 def CrossValidation(df, Y_col, fold):
-    X = df.drop(columns=[Y_col])
-    Y = df[Y_col]
+    X, y = Initialize_Data(df, Y_col)
 
     kf = KFold(n_splits=fold, shuffle = True, random_state=0)
-
+    
     rmse_values = []
     for train_index, test_index in kf.split(X):
         X_train, X_test = X.iloc[train_index], X.iloc[test_index]
-        y_train, y_test = Y.iloc[train_index], Y.iloc[test_index]
+        y_train, y_test = y.iloc[train_index], y.iloc[test_index]
 
         model = LinearRegression()
         model.fit(X_train, y_train)
@@ -40,19 +38,18 @@ def CrossValidation(df, Y_col, fold):
         # Calculate RMSE for this fold
         rmse_fold = root_mean_squared_error(y_test, y_pred)
         rmse_values.append(rmse_fold)
+        
     RMSE = np.mean(rmse_values)
     return RMSE
 
 def Resubstitution(df, Y_col):
-    
     X, y = Initialize_Data(df, Y_col)
 
     # Initial model with all data
     model = LinearRegression()
     model.fit(X, y)
 
-    # RMSE
     Y_pred = model.predict(X)
+    
     RMSE = root_mean_squared_error(y, Y_pred)
-
     return RMSE
