@@ -40,3 +40,46 @@ The standard deviation (SD) of RMSE (Root Mean Square Error) can provide insight
 
   **High accuracy**: Predictions are close to the actual values.
   To conclude, a low SD of RMSE means that the precision of the model is high, meaning its performance is consistent. However, you also need to look at the actual value of RMSE to determine the accuracy of the model.
+
+### <mark>Hold Out, K-fold Cross Validation, and Resubstitution</mark>
+
+- ### Hold Out
+
+  - Concept: Split data into training and test sets.
+  - Usage: Train on one set, test on another.
+  - Pros: Simple, quick.
+  - Cons: Performance depends on the split, less reliable.
+
+![ho1](./assets/ho1.png)
+</br>
+
+![ho2](./assets/ho2.png)
+</br>
+
+- ### K-fold Cross Validation
+
+  - Concept: Split data into k folds, train and test k times, each with different fold as test set.
+  - Usage: Average results across folds.
+  - Pros: More reliable, uses more data for training.
+  - Cons: More computationally intensive.
+
+![ho1](./assets/cr1.png)
+</br>
+
+![ho2](./assets/cr2.png)
+</br>
+
+- Resubstitution
+
+  - Concept: Evaluate on the same data used for training.
+  - Usage: Train and test on the full dataset.
+  - Pros: Simple, quick.
+  - Cons: Overly optimistic, poor generalization.
+
+### Summary
+
+- Hold-Out: Simple but can be unreliable depending on the data split.
+- K-Fold Cross-Validation: More reliable and commonly used, balances between bias and variance.
+- Resubstitution Validation: Quick but provides an unrealistic performance estimate.
+
+> Each method has its use cases and should be chosen based on the dataset size, computational resources, and the need for reliable performance estimation.
