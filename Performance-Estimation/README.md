@@ -14,7 +14,7 @@ https://github.com/Kariusdi/Machine-Learning-Class/tree/main/Performance-Estimat
 
 ### <mark>Precision and Accuracy</mark>
 
-![components](./assets/pre_Ac.jpeg)
+![pre-ac](./assets/pre_Ac.jpeg)
 </br>
 
 ### <mark>Explaination about RMSE and SD of RMSE that refers to "precision" and "accuracy"</mark>
