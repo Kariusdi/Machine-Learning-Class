@@ -4,6 +4,7 @@ from sklearn.model_selection import KFold
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import root_mean_squared_error
 import numpy as np
+from experiments import Initialize_Data
 
 def HoldOut(df, Y_col, testsize):
     X = df.drop(columns=[Y_col])
@@ -40,4 +41,18 @@ def CrossValidation(df, Y_col, fold):
         rmse_fold = root_mean_squared_error(y_test, y_pred)
         rmse_values.append(rmse_fold)
     RMSE = np.mean(rmse_values)
+    return RMSE
+
+def Resubstitution(df, Y_col):
+    
+    X, y = Initialize_Data(df, Y_col)
+
+    # Initial model with all data
+    model = LinearRegression()
+    model.fit(X, y)
+
+    # RMSE
+    Y_pred = model.predict(X)
+    RMSE = root_mean_squared_error(y, Y_pred)
+
     return RMSE
