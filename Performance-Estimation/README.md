@@ -2,16 +2,22 @@
 
 In this chapter, we are going to use WEKA to visualize the performance of ML model in term of "precision" and "accuracy" with differences methods.
 
-> The test results are in the link below. ⬇️
+> The test results from **_WEKA_** are in the link below. ⬇️
 
-[https://docs.google.com/spreadsheets/d/11HBqf4iq6L8h1zfKdO5Nwn-z6gsd7zeO0jDJNbXjPtg/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1R_fPmHHT9pcqWLS3Dwo1KzI3gZ4Rjlj3/edit?gid=2115504968#gid=2115504968)
+https://docs.google.com/spreadsheets/d/1R_fPmHHT9pcqWLS3Dwo1KzI3gZ4Rjlj3/edit?gid=2115504968#gid=2115504968
 
-## <mark>Precision and Accuracy</mark>
+> The test results from using **_Python_** are in the link below. ⬇️
+
+https://github.com/Kariusdi/Machine-Learning-Class/tree/main/Performance-Estimation/Experiments-usingPython
+
+## Need to know of this section 👨🏽‍💻
+
+### <mark>Precision and Accuracy</mark>
 
 ![components](./assets/pre_Ac.jpeg)
 </br>
 
-## <mark>Explaination about RMSE and SD of RMSE that refers to "precision" and "accuracy"</mark>
+### <mark>Explaination about RMSE and SD of RMSE that refers to "precision" and "accuracy"</mark>
 
 The standard deviation (SD) of RMSE (Root Mean Square Error) can provide insights into the consistency and reliability of a model's performance across different subsets of data. Here’s how to interpret a low SD of RMSE:
 
