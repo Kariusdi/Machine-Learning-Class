@@ -2,7 +2,7 @@
 
 Linear Regression is the **_Supervised Learning_** that can predict the output as a continuous. For example, if we have gender and heigth as features and weigth as a output. We can use linear regression to predict the weigth when new data has come.
 
-## Need to know of this section 👨🏽‍💻
+## Need to know for this section 👨🏽‍💻
 
 ### Machine Learning Components
 

@@ -8,9 +8,9 @@ https://docs.google.com/spreadsheets/d/1R_fPmHHT9pcqWLS3Dwo1KzI3gZ4Rjlj3/edit?gi
 
 > The test results from using **_Python_** are in the link below. ⬇️
 
-https://github.com/Kariusdi/Machine-Learning-Class/tree/main/Performance-Estimation/Experiments-usingPython
+https://github.com/Kariusdi/Machine-Learning-Class/tree/main/Performance-Estimation/Experiments-python
 
-## Need to know of this section 👨🏽‍💻
+## Need to know for this section 👨🏽‍💻
 
 ### <mark>Precision and Accuracy</mark>
 
