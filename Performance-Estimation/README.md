@@ -69,7 +69,7 @@ The standard deviation (SD) of RMSE (Root Mean Square Error) can provide insight
 ![ho2](./assets/cr2.png)
 </br>
 
-- Resubstitution
+- ### Resubstitution
 
   - Concept: Evaluate on the same data used for training.
   - Usage: Train and test on the full dataset.
