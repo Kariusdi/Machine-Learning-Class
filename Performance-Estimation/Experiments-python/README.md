@@ -224,7 +224,7 @@ def Lab4(df, random_state, holdout_split, cross_kfold, sample_size):
     return avg_holdOut, avg_cross, avg_resub, sd_holdOut, sd_cross, sd_resub, combined_df
 
 # Lab 4
-avg_holdOut, avg_cross, avg_resub, sd_holdOut, sd_cross, sd_resub, combined_df = Lab4(df, random_state=100, holdout_split=0.5, cross_kfold=10, sample_size=1000)
+avg_holdOut, avg_cross, avg_resub, sd_holdOut, sd_cross, sd_resub, combined_df = Lab4(df, random_state=100, holdout_split=0.5, cross_kfold=10, sample_size=10000)
 print("\n Lab 4 ")
 print(combined_df)
 print(f"Lab 4 Average Holdout RMSE: ", avg_holdOut)
