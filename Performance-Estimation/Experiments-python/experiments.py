@@ -104,7 +104,7 @@ if __name__ == "__main__":
     
     # Prepare data set
     # Get data frame from csv
-    df = pd.read_csv('./datasets/HeightWeight.csv')
+    df = pd.read_csv('E:\ML\Machine-Learning-Class\Performance-Estimation\Experiments-python\HeightWeight.csv')
     # Compute reference RMSE using Resubstitution on the full data
     AllData_RMSE = Resubstitution(df, "Weight")
     print('Reference (RMSE): ', AllData_RMSE)
