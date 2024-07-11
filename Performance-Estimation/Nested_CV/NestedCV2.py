@@ -1,5 +1,9 @@
 import numpy as np
 from matplotlib import pyplot as plt
+<<<<<<< HEAD
+=======
+
+>>>>>>> b30422c (Iris from scikit)
 from sklearn.datasets import load_iris
 from sklearn.model_selection import GridSearchCV, KFold, cross_val_score
 from sklearn.svm import SVC
