@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from sklearn.model_selection import KFold
 from sklearn.model_selection import cross_val_score
 from sklearn.ensemble import RandomForestRegressor  # Example model
@@ -46,3 +47,9 @@ for train_index, test_index in outer_kf.split(X):
 # Compute the mean outer loop score
 final_score = np.mean(outer_scores)
 print(f"Nested Cross-Validation Score: {final_score:.4f}")
+=======
+from sklearn.model_selection import GridSearchCV, cross_val_score, KFold
+import pandas as pd
+
+df = pd.read_csv("HeightWeight.csv")
+>>>>>>> dff1f8f (add csv)
