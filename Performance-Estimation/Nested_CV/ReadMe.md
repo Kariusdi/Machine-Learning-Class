@@ -1,1 +1,3 @@
-Use NestedCV2
+# Nested Cross Validation 🪐
+
+> we'll use NestedCV2.
