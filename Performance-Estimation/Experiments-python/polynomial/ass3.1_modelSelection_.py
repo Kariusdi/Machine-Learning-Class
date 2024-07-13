@@ -35,10 +35,14 @@ def cross_validation(x, y, degree):
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 data_dir = 'Performance-Estimation/Experiments-python/polynomial/datasets'
 =======
 data_dir = 'Performance-Estimation/Experiments-python/polynomial/data'
 >>>>>>> 549f23c (ass3.1)
+=======
+data_dir = 'Performance-Estimation/Experiments-python/polynomial/datasets'
+>>>>>>> aa08e4b (:art: : improved folder structure.)
 files = os.listdir(data_dir)
 
 degreeArray = [1, 2, 3, 4, 5, 6, 7, 8]
