@@ -67,6 +67,7 @@ for key, coeffs in results.items():
         df_results.at[f'w{i}', key] = coeffs[i]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 print(df_results)
 # print(results)
@@ -75,3 +76,8 @@ print(df_results)
 print(df_results)
 print(results)
 >>>>>>> 549f23c (ass3.1)
+=======
+
+print(df_results)
+# print(results)
+>>>>>>> 6de31be (ass3)

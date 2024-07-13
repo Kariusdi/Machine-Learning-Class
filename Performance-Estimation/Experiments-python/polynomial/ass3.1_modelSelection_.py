@@ -53,10 +53,14 @@ results = {
 for file in files:
     file_path = os.path.join(data_dir, file)
 <<<<<<< HEAD
+<<<<<<< HEAD
     # print(f"Processing file: {file_path}")
 =======
     print(f"Processing file: {file_path}")
 >>>>>>> 549f23c (ass3.1)
+=======
+    # print(f"Processing file: {file_path}")
+>>>>>>> 6de31be (ass3)
     x, y = load_data(file_path)
     
     sample_size = len(x)
