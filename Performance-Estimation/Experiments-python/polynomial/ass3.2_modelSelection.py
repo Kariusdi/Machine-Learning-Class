@@ -56,6 +56,6 @@ for key, coeffs in results.items():
     for i in range(len(coeffs)):
         df_results.at[f'w{i}', key] = coeffs[i]
 
-# Display the results
+
 print(df_results)
-print(results)
+# print(results)

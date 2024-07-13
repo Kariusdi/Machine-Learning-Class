@@ -48,7 +48,7 @@ results = {
 # Perform experiments for each file
 for file in files:
     file_path = os.path.join(data_dir, file)
-    print(f"Processing file: {file_path}")
+    # print(f"Processing file: {file_path}")
     x, y = load_data(file_path)
     
     sample_size = len(x)
