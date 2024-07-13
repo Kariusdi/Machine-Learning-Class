@@ -2,6 +2,8 @@
 
 Linear Regression is the **_Supervised Learning_** that can predict the output as a continuous. For example, if we have gender and heigth as features and weigth as a output. We can use linear regression to predict the weigth when new data has come.
 
+## Need to know for this section 👨🏽‍💻
+
 ### Machine Learning Components
 
 - Representation
@@ -38,8 +40,10 @@ h(x) = w_0 + w_1 x_1 + w_2 x_2 + ... + w_d x_d
 
    - There are 2 optimizations that we're gonna use in this term.
 
-     1. **Normal Equation**: (we're gonna talk about this later)
-     2. **Gradient Descent**: random starter weigth (typically, we're gonna start at 0) and adjust weigth untill errors has been descreased to the minimum.
+     1. **Normal Equation**: Calculate just 1 time and get the new weight immedietly. It suits with the small datasets.
+        ![normal](./assets/normalEq.jpeg)
+        </br>
+     2. **Gradient Descent**: Random starter weight (typically, we're gonna start at 0) and adjust weigth untill errors has been descreased to the minimum.
         ![gradient](./assets/gradientDescent.jpeg)
         </br>
 
@@ -50,3 +54,7 @@ h(x) = w_0 + w_1 x_1 + w_2 x_2 + ... + w_d x_d
 ### [01](https://github.com/Kariusdi/Machine-Learning-Class67/blob/main/Linear-Regression/01/README.md)
 
 ### [02](https://github.com/Kariusdi/Machine-Learning-Class67/blob/main/Linear-Regression/02/README.md)
+
+### [03](https://github.com/Kariusdi/Machine-Learning-Class67/blob/main/Linear-Regression/03/README.md)
+
+### [04](https://github.com/Kariusdi/Machine-Learning-Class67/blob/main/Linear-Regression/04/README.md)

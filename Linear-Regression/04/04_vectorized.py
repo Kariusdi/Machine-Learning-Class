@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 from model.LinearRegression import LinearRegression
 
 if __name__ == "__main__":
-    X_data = [[0], [200]] # X represents to be a row (samples)
-    y_data = [0, 2]       # Y represents to be a column (output)
+    X_data = [[29], [28], [34], [31], [25]] # X represents to be a row (samples)
+    y_data = [77, 62, 93, 84, 59]       # Y represents to be a column (output)
 
     X = np.array(X_data)
     y = np.array(y_data)
