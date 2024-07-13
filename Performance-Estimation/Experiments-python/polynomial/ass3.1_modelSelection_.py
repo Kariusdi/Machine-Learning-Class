@@ -34,7 +34,11 @@ def cross_validation(x, y, degree):
     return rmse_cv
 
 
+<<<<<<< HEAD
 data_dir = 'Performance-Estimation/Experiments-python/polynomial/datasets'
+=======
+data_dir = 'Performance-Estimation/Experiments-python/polynomial/data'
+>>>>>>> 549f23c (ass3.1)
 files = os.listdir(data_dir)
 
 degreeArray = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -48,7 +52,11 @@ results = {
 # Perform experiments for each file
 for file in files:
     file_path = os.path.join(data_dir, file)
+<<<<<<< HEAD
     # print(f"Processing file: {file_path}")
+=======
+    print(f"Processing file: {file_path}")
+>>>>>>> 549f23c (ass3.1)
     x, y = load_data(file_path)
     
     sample_size = len(x)
