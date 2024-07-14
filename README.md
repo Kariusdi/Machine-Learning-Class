@@ -26,6 +26,7 @@ This is for ML class as a senior year, 2567.
   - [Linear Origin Model](https://github.com/Kariusdi/Machine-Learning-Class/tree/main/Generalization/LinearOriginModel)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Learning Curve](https://github.com/Kariusdi/Machine-Learning-Class67/tree/main/LearningCurve)
 =======
 <<<<<<< HEAD
@@ -50,9 +51,20 @@ This is for ML class as a senior year, 2567.
 =======
 =======
 =======
+>>>>>>> febde97 (:memo: Updated README.md.)
+=======
 - [Generalization](https://github.com/Kariusdi/Machine-Learning-Class67/tree/main/Generalization)
 >>>>>>> cff45da (:memo: : added another topic in main README.)
 =======
 >>>>>>> ba4184a (:memo: : added topics to README.)
+<<<<<<< HEAD
 >>>>>>> f026b2d (:memo: : added topics to README.)
+<<<<<<< HEAD
 >>>>>>> 57bdebc (:memo: : added topics to README.)
+=======
+=======
+=======
+- [Learning Curve](https://github.com/Kariusdi/Machine-Learning-Class67/tree/main/LearningCurve)
+>>>>>>> 4736686 (:memo: Updated README.md.)
+>>>>>>> febde97 (:memo: Updated README.md.)
+>>>>>>> a86a16a (:memo: Updated README.md.)
