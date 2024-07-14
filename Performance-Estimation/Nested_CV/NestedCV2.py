@@ -22,7 +22,8 @@ y_iris = iris.target
 # Set up possible values of parameters to optimize over
 p_grid = {"C": [1, 10, 100], "gamma": [0.01, 0.1]}
 
-# We will use a Support Vector Classifier with "rbf" kernel
+# We will use a Support Vector Classifier with 
+# "rbf(radial base function)" kernel
 svm = SVC(kernel="rbf")
 
 # Arrays to store scores
