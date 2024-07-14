@@ -12,3 +12,4 @@ This is for ML class as a senior year, 2567.
   - [Constant Model](https://github.com/Kariusdi/Machine-Learning-Class/tree/main/Generalization/ConstantModel)
   - [Linear Model](https://github.com/Kariusdi/Machine-Learning-Class/tree/main/Generalization/LinearModel)
   - [Linear Origin Model](https://github.com/Kariusdi/Machine-Learning-Class/tree/main/Generalization/LinearOriginModel)
+- [Learning Curve](https://github.com/Kariusdi/Machine-Learning-Class67/tree/main/LearningCurve)
