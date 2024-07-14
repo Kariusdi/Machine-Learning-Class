@@ -104,7 +104,7 @@ if __name__ == "__main__":
     
     # Prepare data set
     # Get data frame from csv
-    df = pd.read_csv('HeightWeight.csv')
+    df = pd.read_csv('./datasets/HeightWeight.csv')
     # Compute reference RMSE using Resubstitution on the full data
     AllData_RMSE = Resubstitution(df, "Weight")
     print('Reference (RMSE): ', AllData_RMSE)
@@ -143,7 +143,7 @@ if __name__ == "__main__":
     
     
     # Lab 4
-    avg_holdOut, avg_cross, avg_resub, sd_holdOut, sd_cross, sd_resub, combined_df = Lab4(df, random_state=100, holdout_split=0.5, cross_kfold=10, sample_size=1000)
+    avg_holdOut, avg_cross, avg_resub, sd_holdOut, sd_cross, sd_resub, combined_df = Lab4(df, random_state=100, holdout_split=0.5, cross_kfold=10, sample_size=10000)
     print("\n Lab 4 ")
     print(combined_df)
     print(f"Lab 4 Average Holdout RMSE: ", avg_holdOut)

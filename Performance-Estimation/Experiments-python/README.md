@@ -182,6 +182,15 @@ def Lab3(df, random_state, holdout_split, cross_kfold, sample_size):
     sd_cross = np.std(cross_log)
 
     return avg_holdOut, avg_cross, sd_holdOut, sd_cross
+
+# Lab 3
+avg_holdOut, avg_cross, sd_holdOut, sd_cross, combined_df = Lab3(df, random_state=100, holdout_split=0.5, cross_kfold=10, sample_size=100)
+print("\n Lab 3 ")
+print(combined_df)
+print(f"Lab 3 Average Holdout RMSE: ", avg_holdOut)
+print(f"Lab 3 Average Cross-Validation RMSE: ", avg_cross)
+print(f"Lab 3 Holdout RMSE SD: ", sd_holdOut)
+print(f"Lab 3 Cross-Validation RMSE SD: ", sd_cross)
 ```
 
 ## <mark>Experiment 4</mark>
@@ -215,7 +224,7 @@ def Lab4(df, random_state, holdout_split, cross_kfold, sample_size):
     return avg_holdOut, avg_cross, avg_resub, sd_holdOut, sd_cross, sd_resub, combined_df
 
 # Lab 4
-avg_holdOut, avg_cross, avg_resub, sd_holdOut, sd_cross, sd_resub, combined_df = Lab4(df, random_state=100, holdout_split=0.5, cross_kfold=10, sample_size=1000)
+avg_holdOut, avg_cross, avg_resub, sd_holdOut, sd_cross, sd_resub, combined_df = Lab4(df, random_state=100, holdout_split=0.5, cross_kfold=10, sample_size=10000)
 print("\n Lab 4 ")
 print(combined_df)
 print(f"Lab 4 Average Holdout RMSE: ", avg_holdOut)
