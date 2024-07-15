@@ -26,14 +26,34 @@ def polynomial_regression(x, y, degree):
 
 
 files = {
+<<<<<<< HEAD
+<<<<<<< HEAD
     'Noiseless_10': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noiseless_10sample.csv',
     'Noisy_10': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noisy_10sample.csv',
+=======
+    'Noiseless_10': 'Performance-Estimation/Experiments-python/polynomial/data/sin_noiseless_10sample.csv',
+    'Noisy_10': 'Performance-Estimation/Experiments-python/polynomial/data/sin_noisy_10sample.csv',
+>>>>>>> 549f23c (ass3.1)
+=======
+    'Noiseless_10': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noiseless_10sample.csv',
+    'Noisy_10': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noisy_10sample.csv',
+>>>>>>> aa08e4b (:art: : improved folder structure.)
     # 'Noiseless_20': 'Performance-Estimation/Experiments-python/polynomial/data/sin_noiseless_20sample.csv',
     # 'Noisy_20': 'Performance-Estimation/Experiments-python/polynomial/data/sin_noisy_20sample.csv',
     # 'Noiseless_40': 'Performance-Estimation/Experiments-python/polynomial/data/sin_noiseless_40sample.csv',
     # 'Noisy_40': 'Performance-Estimation/Experiments-python/polynomial/data/sin_noisy_40sample.csv',
+<<<<<<< HEAD
+<<<<<<< HEAD
     'Noiseless_80': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noiseless_80sample.csv',
     'Noisy_80': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noisy_80sample.csv'
+=======
+    'Noiseless_80': 'Performance-Estimation/Experiments-python/polynomial/data/sin_noiseless_80sample.csv',
+    'Noisy_80': 'Performance-Estimation/Experiments-python/polynomial/data/sin_noisy_80sample.csv'
+>>>>>>> 549f23c (ass3.1)
+=======
+    'Noiseless_80': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noiseless_80sample.csv',
+    'Noisy_80': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noisy_80sample.csv'
+>>>>>>> aa08e4b (:art: : improved folder structure.)
 }
 
 degree = 8
@@ -56,6 +76,18 @@ for key, coeffs in results.items():
     for i in range(len(coeffs)):
         df_results.at[f'w{i}', key] = coeffs[i]
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 
 print(df_results)
 # print(results)
+=======
+# Display the results
+print(df_results)
+print(results)
+>>>>>>> 549f23c (ass3.1)
+=======
+
+print(df_results)
+# print(results)
+>>>>>>> 6de31be (ass3)
