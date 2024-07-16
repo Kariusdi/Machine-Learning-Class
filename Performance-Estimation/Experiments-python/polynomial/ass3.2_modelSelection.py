@@ -22,7 +22,7 @@ def polynomial_regression(x, y, degree):
     x_poly = poly.fit_transform(x)
     model = LinearRegression()
     model.fit(x_poly, y)
-    return model.coef_
+    return model
 
 
 files = {
@@ -41,16 +41,17 @@ files = {
 degree = 8
 results = {}
 
-# Process each file and store coefficients
+# Process each file and store coefficientsฆ
 for key, file_path in files.items():
     x, y = load_data(file_path)
     if x is None or y is None:
         continue
-    coefficients = polynomial_regression(x, y, degree)
+    model = polynomial_regression(x, y, degree)
+    coefficients = np.append(model.intercept_, model.coef_[1:])
     results[key] = coefficients
 
 
-index = [f'w{i}' for i in range(1, degree+1)] + ['w0']
+index = [f'w{i}' for i in range(1, degree+1)]
 df_results = pd.DataFrame(index=index)
 
 # Fill in the results DataFrame
