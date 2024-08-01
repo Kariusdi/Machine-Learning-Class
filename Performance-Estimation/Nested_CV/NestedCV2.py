@@ -5,7 +5,7 @@ from sklearn.model_selection import GridSearchCV, KFold, cross_val_score
 from sklearn.svm import SVC
 
 # Number of random trials
-NUM_TRIALS = 30
+NUM_TRIALS = 20
 
 # Load the dataset
 iris = load_iris()
