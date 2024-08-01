@@ -1,5 +1,12 @@
 import numpy as np
 from matplotlib import pyplot as plt
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> b30422c (Iris from scikit)
+=======
+>>>>>>> ea90a45 (.)
 from sklearn.datasets import load_iris
 from sklearn.model_selection import GridSearchCV, KFold, cross_val_score
 from sklearn.svm import SVC
@@ -15,7 +22,8 @@ y_iris = iris.target
 # Set up possible values of parameters to optimize over
 p_grid = {"C": [1, 10, 100], "gamma": [0.01, 0.1]}
 
-# We will use a Support Vector Classifier with "rbf" kernel
+# We will use a Support Vector Classifier with 
+# "rbf(radial base function)" kernel
 svm = SVC(kernel="rbf")
 
 # Arrays to store scores
