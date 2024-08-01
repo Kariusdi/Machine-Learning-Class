@@ -42,7 +42,7 @@ degreeArray = [1, 2, 3, 4, 5, 6, 7, 8]
 results = {
     'noiseless': {degree: [] for degree in degreeArray},
     'noisy': {degree: [] for degree in degreeArray}
-}
+} 
 
 # Perform experiments for each file
 for file in files:
