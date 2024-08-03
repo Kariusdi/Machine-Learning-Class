@@ -26,7 +26,7 @@ if __name__ == "__main__":
     model.training(X_b, y, "gradientDes")
     
     # Make predictions
-    predictions = model.predict(X_b)
+    predictions = model.prediction(X_b)
     
     # Calculate and print the loss
     error = model.costFunction(X_b, y)
