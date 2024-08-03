@@ -90,3 +90,8 @@ In linear regression, the goal is to find the best-fitting line (or hyperplane i
 ### Summary 💼
 
 In summary, regularization helps control model complexity, improves generalization, and enhances the performance of linear regression models by adding a penalty for large coefficients.
+
+> Please follow this link, it's very helpful.
+
+https://youtu.be/Xm2C_gTAl8c?si=kVIxoW-fcGWpWEi3
+https://www.youtube.com/watch?v=Q81RR3yKn30
