@@ -24,7 +24,7 @@ def polyRidge(degree):
         y_train, y_test = y[train_index], y[test_index]
 
         # Create and train the Ridge regression model
-        ridge = Ridge(alpha=10000)  # Adjust alpha for regularization strength
+        ridge = Ridge(alpha=100000)  # Adjust alpha for regularization strength
         ridge.fit(X_train, y_train)
 
         # Make predictions on the test and training sets
@@ -49,7 +49,6 @@ def polyRidge(degree):
 
     # Print results and return errors
     return E_train, E_out
-
 
 def generate_sin():
     np.random.seed(42)
