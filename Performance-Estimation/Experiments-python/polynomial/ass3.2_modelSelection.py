@@ -22,10 +22,12 @@ def polynomial_regression(x, y, degree):
     x_poly = poly.fit_transform(x)
     model = LinearRegression()
     model.fit(x_poly, y)
-    return model.coef_
+    return model
 
 
 files = {
+    'Noiseless_10': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noiseless_10sample.csv',
+    'Noisy_10': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noisy_10sample.csv',
     'Noiseless_10': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noiseless_10sample.csv',
     'Noisy_10': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noisy_10sample.csv',
     # 'Noiseless_20': 'Performance-Estimation/Experiments-python/polynomial/data/sin_noiseless_20sample.csv',
@@ -39,23 +41,24 @@ files = {
 degree = 8
 results = {}
 
-# Process each file and store coefficients
+# Process each file and store coefficientsฆ
 for key, file_path in files.items():
     x, y = load_data(file_path)
     if x is None or y is None:
         continue
-    coefficients = polynomial_regression(x, y, degree)
+    model = polynomial_regression(x, y, degree)
+    coefficients = np.append(model.intercept_, model.coef_[1:])
     results[key] = coefficients
 
 
-index = [f'w{i}' for i in range(1, degree+1)] + ['w0']
+index = [f'w{i}' for i in range(1, degree+1)]
 df_results = pd.DataFrame(index=index)
 
 # Fill in the results DataFrame
 for key, coeffs in results.items():
     for i in range(len(coeffs)):
         df_results.at[f'w{i}', key] = coeffs[i]
-
-
+        
 print(df_results)
-# print(results)
+print(results)
+
