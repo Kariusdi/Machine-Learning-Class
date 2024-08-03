@@ -1,7 +1,7 @@
 import numpy as np
 
 def gradientDescent(X, y, y_pred, n_samples, lambda_param, weights):
-    gradient = (1 / n_samples) * (X.T @ (y_pred - y)) + (lambda_param / n_samples) * weights
+    gradient = (1 / n_samples) * (X.T @ (y_pred - y)) + (lambda_param / n_samples) * (weights[1:] ** 2)
     gradient[0] -= (lambda_param / n_samples) * weights[0]  # Don't regularize the bias term
     return gradient
 
@@ -30,8 +30,8 @@ class RidgeRegression:
             self.weights = np.zeros(n_features)
             for _ in range(n_iters):
                 self.weights_history.append(self.weights[1])
-                self.costs_history.append(self.costFunction(X, y))
                 y_pred = self.prediction(X)
+                self.costs_history.append(self.costFunction(X, y, y_pred))
                 weights_gradient = gradientDescent(X, y, y_pred, n_samples, self.lambda_param, self.weights)
                 self.weights -= lr * weights_gradient
         else:
@@ -52,8 +52,7 @@ class RidgeRegression:
     def prediction(self, X):
         return np.dot(X, self.weights)
 
-    def costFunction(self, X, y):
-        y_pred = self.prediction(X)
+    def costFunction(self, X, y, y_pred):
         mse = np.sum((y - y_pred) ** 2)
         regularization = self.lambda_param * np.sum(self.weights[1:] ** 2)
         return mse + regularization
