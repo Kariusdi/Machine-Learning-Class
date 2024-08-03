@@ -10,7 +10,7 @@ def gradientDescent(n_samples, lr, X, y, y_pred):
     return weights_gradient, bias_gradient
 
 def normalEquation(X, y):
-    new_weights = np.linalg.inv(X.T.dot(X)).dot(X.T.dot(y)) # w = (XT * X)^-1 * (XT * y)
+    new_weights = np.linalg.pinv(X.T.dot(X)).dot(X.T.dot(y)) # w = (XT * X)^-1 * (XT * y)
     return new_weights
 
 def costFunction(n_samples, y_pred, y):                     # Mean Sqaure Error (MSE)

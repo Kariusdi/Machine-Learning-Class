@@ -1,7 +1,7 @@
 import numpy as np
 
 def gradientDescent(X, y, y_pred, n_samples, lambda_param, weights):
-    gradient = (1 / n_samples) * (X.T @ (y_pred - y)) + (lambda_param / n_samples) * weights
+    gradient = (1 / n_samples) * (X.T @ (y_pred - y)) + (lambda_param / n_samples) * (weights[1:] ** 2)
     gradient[0] -= (lambda_param / n_samples) * weights[0]  # Don't regularize the bias term
     return gradient
 
@@ -22,16 +22,16 @@ class RidgeRegression:
         self.weights_history = []
         self.costs_history = []
 
-    def training(self, X, y, mode, lr = 0.1, n_iters = 100):
-        if (mode == "normalEq"):
+    def training(self, X, y, type, lr = 0.1, n_iters = 100):
+        if (type == "normalEq"):
             self.weights = normalEquation(X, y, self.lambda_param)
-        elif (mode == "gradientDes"):
+        elif (type == "gradientDes"):
             n_samples, n_features = X.shape
             self.weights = np.zeros(n_features)
             for _ in range(n_iters):
                 self.weights_history.append(self.weights[1])
-                self.costs_history.append(self.costFunction(X, y))
-                y_pred = self.predict(X)
+                y_pred = self.prediction(X)
+                self.costs_history.append(self.costFunction(X, y, y_pred))
                 weights_gradient = gradientDescent(X, y, y_pred, n_samples, self.lambda_param, self.weights)
                 self.weights -= lr * weights_gradient
         else:
@@ -43,20 +43,16 @@ class RidgeRegression:
         X_std = (X - mean_x) / std_x
         return X_std
     
-    def test(self):
-        print(self.weights.shape)
-    
     def get_Weights_History(self):
         return self.weights_history
     
     def get_Costs_History(self):
         return self.costs_history
     
-    def predict(self, X):
+    def prediction(self, X):
         return np.dot(X, self.weights)
 
-    def costFunction(self, X, y):
-        y_pred = self.predict(X)
+    def costFunction(self, X, y, y_pred):
         mse = np.sum((y - y_pred) ** 2)
         regularization = self.lambda_param * np.sum(self.weights[1:] ** 2)
         return mse + regularization
