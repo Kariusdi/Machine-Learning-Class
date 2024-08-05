@@ -53,6 +53,6 @@ class RidgeRegression:
         return np.dot(X, self.weights)
 
     def costFunction(self, X, y, y_pred):
-        mse = np.sum((y - y_pred) ** 2)
+        rss = np.sum((y - y_pred) ** 2)
         regularization = self.lambda_param * np.sum(self.weights[1:] ** 2)
-        return mse + regularization
+        return rss + regularization
