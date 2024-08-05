@@ -33,7 +33,7 @@ def cross_validation(x, y, degree):
     rmse_cv = np.sqrt(-cv_scores.mean())
     return rmse_cv
 
-data_dir = 'Performance-Estimation/Experiments-python/polynomial/datasets'
+data_dir = './datasets'
 files = os.listdir(data_dir)
 
 degreeArray = [1, 2, 3, 4, 5, 6, 7, 8]
