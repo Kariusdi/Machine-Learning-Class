@@ -26,16 +26,16 @@ def polynomial_regression(x, y, degree):
 
 
 files = {
-    'Noiseless_10': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noiseless_10sample.csv',
-    'Noisy_10': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noisy_10sample.csv',
-    'Noiseless_10': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noiseless_10sample.csv',
-    'Noisy_10': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noisy_10sample.csv',
+    'Noiseless_10': './datasets/sin_noiseless_10sample.csv',
+    'Noisy_10': './datasets/sin_noisy_10sample.csv',
+    'Noiseless_10': './datasets/sin_noiseless_10sample.csv',
+    'Noisy_10': './datasets/sin_noisy_10sample.csv',
     # 'Noiseless_20': 'Performance-Estimation/Experiments-python/polynomial/data/sin_noiseless_20sample.csv',
     # 'Noisy_20': 'Performance-Estimation/Experiments-python/polynomial/data/sin_noisy_20sample.csv',
     # 'Noiseless_40': 'Performance-Estimation/Experiments-python/polynomial/data/sin_noiseless_40sample.csv',
     # 'Noisy_40': 'Performance-Estimation/Experiments-python/polynomial/data/sin_noisy_40sample.csv',
-    'Noiseless_80': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noiseless_80sample.csv',
-    'Noisy_80': 'Performance-Estimation/Experiments-python/polynomial/datasets/sin_noisy_80sample.csv'
+    'Noiseless_80': './datasets/sin_noiseless_80sample.csv',
+    'Noisy_80': './datasets/sin_noisy_80sample.csv'
 }
 
 degree = 8
@@ -60,5 +60,5 @@ for key, coeffs in results.items():
         df_results.at[f'w{i}', key] = coeffs[i]
         
 print(df_results)
-print(results)
+# print(results)
 

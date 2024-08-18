@@ -42,7 +42,7 @@ def plot_rmse_vs_alpha(alphas, train_rmse, test_rmse):
     plt.tight_layout()
     plt.show()
 
-X_train, Y_train, X_test, Y_test = import_csv("../dataset/HeightWeight.csv")
+X_train, Y_train, X_test, Y_test = import_csv("Regularization/dataset/HeightWeight.csv")
 #X_train, Y_train, X_test, Y_test = generate_sin()
 
 alphas = np.arange(1, 100000, 100)
