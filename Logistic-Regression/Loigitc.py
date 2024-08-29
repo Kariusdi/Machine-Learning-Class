@@ -62,7 +62,6 @@ def main():
     print(f'Optimized w0: {w0:.2f}')
     print(f'Optimized w1: {w1:.2f}')
     print(f'Predicted probabilities: {y_pred}')
-    print(f'Cost: {costs}')
 
     plt.figure(figsize=(8, 6))
     plt.scatter(x, y, color='blue', label='Data')
