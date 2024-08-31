@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 # Step 1: Initialize the data
 X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])  # Feature matrix
-y = np.array([1, 0, 1, 1])  # Labels (target)
+y = np.array([0, 0, 0, 1])  # Labels (target)
 
 # Adding the intercept term (bias) by adding a column of ones to X
 X = np.hstack([np.ones((X.shape[0], 1)), X])
@@ -68,7 +68,7 @@ def plot_decision_boundary(X, y, theta):
     # Plot decision boundary
     x_values = [np.min(X[:, 1] - 0.1), np.max(X[:, 2] + 0.1)]
     y_values = -(theta[0] + np.dot(theta[1], x_values)) / theta[2]
-    plt.plot(x_values, y_values, label='Decision Boundary', color='green', linestyle='--')
+    plt.plot(x_values, y_values, label='Decision Boundary')
 
     # Define plot attributes
     plt.xlabel('Feature 1')
