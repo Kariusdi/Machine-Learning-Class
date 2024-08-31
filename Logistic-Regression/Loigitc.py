@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 # Step 1: Initialize the data
 X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])  # Feature matrix
-y = np.array([1, 0, 1, 1])  # Labels (target)
+y = np.array([0, 0, 0, 1])  # Labels (target)
 
 # Adding the intercept term (bias) by adding a column of ones to X
 X = np.hstack([np.ones((X.shape[0], 1)), X])
@@ -16,7 +16,7 @@ def sigmoid(z):
 def compute_cost(X, y, theta):
     m = len(y)
     h = sigmoid(X @ theta)
-    epsilon = 1e-5  # Small constant to avoid log(0)
+    epsilon = 1e-7  # Small constant to avoid log(0)
     cost = (1/m) * (-y.T @ np.log(h + epsilon) - (1 - y).T @ np.log(1 - h + epsilon))
     return cost
 
