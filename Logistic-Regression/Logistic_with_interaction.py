@@ -3,7 +3,9 @@ import matplotlib.pyplot as plt
 
 # Step 1: Initialize the data
 X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])  # Feature matrix
-y = np.array([1, 0, 0, 1])  # Labels (target)
+#y = np.array([0, 0, 0, 1])  # Labels (target)
+#y = np.array([0, 1, 1, 1])  # Labels (target)
+y = np.array([0, 0, 1, 1])  # Labels (target)
 
 interaction_term = (X[:, 0] * X[:, 1]).reshape(-1, 1)
 X = np.hstack([np.ones((X.shape[0], 1)), X, interaction_term])
@@ -70,10 +72,20 @@ def plot_decision_boundary(X, y, theta):
     y_values = -(theta[0] + np.dot(theta[1], x_values)) / theta[2]
     plt.plot(x_values, y_values, label='Decision Boundary', color='green', linestyle='--')
 
+    z_values = np.linspace(-6, 6, 100)
+
+    # # Compute the sigmoid of z
+    sigmoid_values = sigmoid(z_values)
+
+    # # Plot the sigmoid function
+    plt.plot(z_values, sigmoid_values, color='blue')
+
+
     # Define plot attributes
     plt.xlabel('Feature 1')
     plt.ylabel('Feature 2')
     plt.legend()
+    plt.grid(True)
     plt.title('Logistic Regression with Decision Boundary')
     plt.show()
 
