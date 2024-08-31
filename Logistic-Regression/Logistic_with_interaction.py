@@ -3,11 +3,9 @@ import matplotlib.pyplot as plt
 
 # Step 1: Initialize the data
 X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])  # Feature matrix
-#y = np.array([0, 0, 0, 1])  # Labels (target)
-#y = np.array([0, 1, 1, 1])  # Labels (target)
-y = np.array([0, 0, 1, 1])  # Labels (target)
+y = np.array([1, 0, 0, 1])  # Labels (target)
 
-interaction_term = (X[:, 0] * X[:, 1]).reshape(-1, 1)
+interaction_term =  np.c_[X, X[:, 0] * X[:, 1]]
 X = np.hstack([np.ones((X.shape[0], 1)), X, interaction_term])
 
 # Step 2: Sigmoid function
@@ -50,52 +48,6 @@ theta_initial = np.zeros(X.shape[1])
 learning_rate = 0.1
 num_iters = 1000
 
-def F1_score(y, y_pred):
-    tp,tn,fp,fn = 0,0,0,0
-    for i in range(len(y)):
-        if y[i] == 1 and y_pred[i] == 1:
-            tp += 1
-        elif y[i] == 1 and y_pred[i] == 0:
-            fn += 1
-        elif y[i] == 0 and y_pred[i] == 1:
-            fp += 1
-        elif y[i] == 0 and y_pred[i] == 0:
-            tn += 1
-    precision = tp/(tp+fp)
-    recall = tp/(tp+fn)
-    f1_score = 2*precision*recall/(precision+recall)
-    return f1_score
-
-# Step 7: Plotting the results
-def plot_decision_boundary(X, y, theta):
-    # Plot data points
-    plt.scatter(X[y == 0][:, 1], X[y == 0][:, 2], color='red', marker='o', label='Class 0')
-    plt.scatter(X[y == 1][:, 1], X[y == 1][:, 2], color='blue', marker='x', label='Class 1')
-
-    # Plot decision boundary
-    x_values = [np.min(X[:, 1] - 0.1), np.max(X[:, 2] + 0.1)]
-    y_values = -(theta[0] + np.dot(theta[1], x_values)) / theta[2]
-    plt.plot(x_values, y_values, label='Decision Boundary', color='green', linestyle='--')
-
-    z_values = np.linspace(-6, 6, 100)
-
-    # # Compute the sigmoid of z
-    sigmoid_values = sigmoid(z_values)
-
-    # # Plot the sigmoid function
-    plt.plot(z_values, sigmoid_values, color='blue')
-
-
-    # Define plot attributes
-    plt.xlabel('Feature 1')
-    plt.ylabel('Feature 2')
-    plt.legend()
-    plt.grid(True)
-    plt.title('Logistic Regression with Decision Boundary')
-    plt.show()
-
-# Call the function to plot the decision boundary
-
 # Perform gradient descent
 theta_final, cost_history = gradient_descent(X, y, theta_initial, learning_rate, num_iters)
 
@@ -107,4 +59,28 @@ print("Cost after training:", cost_history[-1])
 predictions = predict(X, theta_final)
 print("Predictions:", predictions)
 
+# Step 7: Plotting the results
+def plot_decision_boundary(X, y, theta):
+    # Plot data points
+    plt.scatter(X[y == 0][:, 1], X[y == 0][:, 2], color='red', marker='o', label='Class 0')
+    plt.scatter(X[y == 1][:, 1], X[y == 1][:, 2], color='blue', marker='x', label='Class 1')
+
+    z = X @ theta
+    sigmoid_values = sigmoid(z)
+
+    # Plot decision boundary
+    x_values = [np.min(X[:, 1] - 0.1), np.max(X[:, 2] + 0.1)]
+    y_values = -(theta[0] + np.dot(theta[1], x_values)) / theta[2]
+    plt.plot(x_values, y_values, label='Decision Boundary', color='green', linestyle='--')
+
+    # Define plot attributes
+    plt.xlabel('Feature 1')
+    plt.ylabel('Feature 2')
+    plt.grid(True)
+
+    plt.legend()
+    plt.title('Logistic Regression with Decision Boundary')
+    plt.show()
+
+# Call the function to plot the decision boundary
 plot_decision_boundary(X, y, theta_final)
