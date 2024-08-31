@@ -50,16 +50,21 @@ theta_initial = np.zeros(X.shape[1])
 learning_rate = 0.1
 num_iters = 1000
 
-# Perform gradient descent
-theta_final, cost_history = gradient_descent(X, y, theta_initial, learning_rate, num_iters)
-
-# Display the results
-print("Final parameters (theta):", theta_final)
-print("Cost after training:", cost_history[-1])
-
-# Make predictions
-predictions = predict(X, theta_final)
-print("Predictions:", predictions)
+def F1_score(y, y_pred):
+    tp,tn,fp,fn = 0,0,0,0
+    for i in range(len(y)):
+        if y[i] == 1 and y_pred[i] == 1:
+            tp += 1
+        elif y[i] == 1 and y_pred[i] == 0:
+            fn += 1
+        elif y[i] == 0 and y_pred[i] == 1:
+            fp += 1
+        elif y[i] == 0 and y_pred[i] == 0:
+            tn += 1
+    precision = tp/(tp+fp)
+    recall = tp/(tp+fn)
+    f1_score = 2*precision*recall/(precision+recall)
+    return f1_score
 
 # Step 7: Plotting the results
 def plot_decision_boundary(X, y, theta):
@@ -90,4 +95,16 @@ def plot_decision_boundary(X, y, theta):
     plt.show()
 
 # Call the function to plot the decision boundary
+
+# Perform gradient descent
+theta_final, cost_history = gradient_descent(X, y, theta_initial, learning_rate, num_iters)
+
+# Display the results
+print("Final parameters (theta):", theta_final)
+print("Cost after training:", cost_history[-1])
+
+# Make predictions
+predictions = predict(X, theta_final)
+print("Predictions:", predictions)
+
 plot_decision_boundary(X, y, theta_final)
