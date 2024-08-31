@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 # Step 1: Initialize the data
 X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]]) # Feature matrix
-y = np.array([1, 0, 0, 1])  # Labels (target)
+y = np.array([0, 0, 0, 1])  # Labels (target)
 
 def standardize(x):
     xavr = np.mean(x, axis=0)
@@ -26,7 +26,7 @@ def compute_cost(y_predict, y):
     return cost
 
 def update_weight(n, weight, X, y, y_pred, learn):
-    err = np.sqrt((y_pred - y)**2)
+    err = y_pred - y
     new = weight - ((learn/n) * (np.dot(X.T, err)))
     return new
 
@@ -48,6 +48,25 @@ def gradient_descent(n, X, y, theta, iter_rate):
     cost_his.pop(0)
 
     return cost_his, theta_his
+
+def plot(X, y, theta):
+    # Plotting the decision boundary
+    x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
+    y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.01),
+                         np.arange(y_min, y_max, 0.01))
+    
+    interaction_term = xx.ravel() * yy.ravel()
+    X_grid = np.c_[np.ones((xx.ravel().shape[0], 1)), xx.ravel(), yy.ravel(), interaction_term]
+    Z = logistic(X_grid, theta)
+    Z = Z.reshape(xx.shape)
+
+    plt.contourf(xx, yy, Z, alpha=0.8)
+    plt.scatter(X[:, 0], X[:, 1], c=y, edgecolors='k', marker='o')
+    plt.xlabel('Feature 1')
+    plt.ylabel('Feature 2')
+    plt.title('Decision Boundary')
+    plt.show()
         
 
 if __name__ == "__main__":
@@ -82,3 +101,4 @@ if __name__ == "__main__":
             y_pred[i] = 0
 
     print(y_pred)
+    plot(X, y, theta)
