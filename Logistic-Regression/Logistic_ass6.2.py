@@ -1,9 +1,10 @@
 import numpy as np
-from sklearn.datasets import  make_moons
+from sklearn.datasets import make_classification, make_blobs, make_moons
 import matplotlib.pyplot as plt
 
 X, y = make_moons(n_samples=500, noise=0.2)
-
+# X, y = make_blobs(n_samples=500, centers=2, n_features=2, cluster_std=3)
+# X, y = make_classification(n_samples=400, n_features=2, n_informative=2, n_redundant=0, n_clusters_per_class=1)
 def sigmoid(z):
     return 1 / (1 + np.exp(-z))
 
@@ -62,15 +63,15 @@ weights, cost_history = gradient_descent(X, y, weights, learning_rate, iteration
 
 
 predictions = predict(X, weights)
-print("Predictions for make_moons:", predictions)
-print("Actual values for make_moons:", y)
+print("Predictions:", predictions)
+print("Actual values:", y)
 
 
 fig, axs = plt.subplots(1, 2, figsize=(14, 6))
 
 # Plot original data
 axs[0].scatter(X[:, 1], X[:, 2], c=y, cmap='coolwarm')
-axs[0].set_title("Data with make_moons")
+axs[0].set_title("Data set")
 axs[0].set_xlabel("Feature 1")
 axs[0].set_ylabel("Feature 2")
 
