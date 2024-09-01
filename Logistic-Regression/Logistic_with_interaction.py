@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 
 # Step 1: Initialize the data
 X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])  # Feature matrix
-y = np.array([0, 0, 0, 1])  # Labels (target)
+y = np.array([1, 0, 0, 1])  # Labels (target)
 
-# Adding the intercept term (bias) by adding a column of ones to X
-X = np.hstack([np.ones((X.shape[0], 1)), X])
+interaction_term = (X[:, 0] * X[:, 1]).reshape(-1, 1)
+X = np.hstack([np.ones((X.shape[0], 1)), X, interaction_term])
 
 # Step 2: Sigmoid function
 def sigmoid(z):
