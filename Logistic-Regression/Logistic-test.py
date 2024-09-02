@@ -1,54 +1,48 @@
-#testing by library
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
 
-def plot_decision_boundary(x, y, model, title):
-    # Create a mesh grid for plotting decision boundary
-    x_min, x_max = x[:, 0].min() - 1, x[:, 0].max() + 1
-    y_min, y_max = x[:, 1].min() - 1, x[:, 1].max() + 1
-    xx, yy = np.meshgrid(np.linspace(x_min, x_max, 100), np.linspace(y_min, y_max, 100))
-    grid = np.c_[xx.ravel(), yy.ravel()]
+# Step 1: Initialize the data
+X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])  # Feature matrix
+y = np.array([0, 0, 0, 1])  # Labels (target)
 
-    # Predict probabilities for the grid
-    probs = model.predict_proba(grid)[:, 1].reshape(xx.shape)
+# Step 2: Create and train the Logistic Regression model
+model = LogisticRegression()
+model.fit(X, y)
 
-    # Plot the decision boundary and data points
-    plt.contourf(xx, yy, probs, levels=[0, 0.5, 1], alpha=0.3, cmap='coolwarm')
-    plt.scatter(x[:, 0], x[:, 1], c=y, cmap='coolwarm', edgecolors='k')
-    plt.title(title)
-    plt.xlabel('x1')
-    plt.ylabel('x2')
-    plt.colorbar(label='Probability')
+# Step 3: Make predictions
+predictions = model.predict(X)
+print("Predictions:", predictions)
+
+# Step 4: Display final parameters (theta)
+theta_final = np.hstack([model.intercept_, model.coef_.flatten()])
+print("Final parameters (theta):", theta_final)
+
+# Step 5: Evaluate the model
+accuracy = accuracy_score(y, predictions)
+print("Accuracy:", accuracy)
+
+# Step 6: Plotting the decision boundary
+def plot_decision_boundary(X, y, model):
+    # Plot data points
+    plt.scatter(X[y == 0][:, 0], X[y == 0][:, 1], color='red', marker='o', label='Class 0')
+    plt.scatter(X[y == 1][:, 0], X[y == 1][:, 1], color='blue', marker='x', label='Class 1')
+
+    # Plot decision boundary
+    x_values = [np.min(X[:, 0] - 0.1), np.max(X[:, 1] + 0.1)]
+    y_values = -(theta_final[0] + np.dot(theta_final[1], x_values)) / theta_final[2]
+    plt.plot(x_values, y_values, label='Decision Boundary', color='green', linestyle='--')
+
+    # Define plot attributes
+    plt.xlabel('Feature 1')
+    plt.ylabel('Feature 2')
+    plt.legend()
+    plt.title('Logistic Regression with Decision Boundary')
     plt.show()
 
-def train_and_plot(x, y, title):
-    # Train logistic regression model
-    model = LogisticRegression(C=1/0.001, solver='lbfgs')
-    model.fit(x, y)
-    
-    # Plot decision boundary
-    plot_decision_boundary(x, y, model, title)
+# Call the function to plot the decision boundary
+plot_decision_boundary(X, y, model)
 
-def main():
-    # AND logic dataset
-    x_and = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
-    y_and = np.array([0, 0, 0, 1])
-    train_and_plot(x_and, y_and, "Logic AND")
-
-    # OR logic dataset
-    x_or = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
-    y_or = np.array([0, 1, 1, 1])
-    train_and_plot(x_or, y_or, "Logic OR")
-
-    # XOR logic dataset with interaction feature
-    x_xor = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
-    interaction_feature = (x_xor[:, 0] * x_xor[:, 1]).reshape(-1, 1)  # Adding interaction feature
-    x_xor = np.hstack((x_xor, interaction_feature))
-    y_xor = np.array([0, 1, 1, 0])
-    train_and_plot(x_xor, y_xor, "Logic XOR with Interaction Feature")
-
-if __name__ == '__main__':
-    main()
 
 
