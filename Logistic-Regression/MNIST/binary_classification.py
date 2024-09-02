@@ -28,6 +28,8 @@ if __name__ == "__main__":
     # ------------------------ Data Preparation ------------------------
     # 2. Select just 2 classes
     X_1_2 = X[np.any([y == 1,y == 2], axis = 0)]
+    X_1_2 = np.c_[np.ones((X_1_2.shape[0], 1)), X_1_2]
+    
     y_1_2 = y[np.any([y == 1,y == 2], axis = 0)]
     print("Digit 1:", np.count_nonzero(y_1_2 == 1), "samples")
     print("Digit 2:", np.count_nonzero(y_1_2 == 2), "samples\n")
@@ -76,6 +78,15 @@ if __name__ == "__main__":
     
     # see confusion matrix
     conf_matrix = confusion_matrix(Ytest, Y_pred)
+    
+    # performance estimation
+    TN, FP, FN, TP = conf_matrix.ravel()
+    print("\nError Rate:", model.errorRate(FP, FN, Xtest.shape[0]), "%")
+    print("Accuracy:", model.accuracy(TP, TN, Xtest.shape[0]), "%")
+    print("Precision:", model.precision(TP, FN), "%")
+    print("Recall:", model.recall(TP, FP), "%")
+    print("Specificity:", model.specificity(TN, FN), "%\n")
+    
     plt.figure(figsize=(6, 6))
     sns.heatmap(conf_matrix, annot=True, fmt='g', cmap='PiYG', xticklabels=['0 (number 1)', '1 (number 2)'], yticklabels=['0 (number 1)', '1 (number 2)'])
     plt.xlabel('Predicted Preference', fontsize=12)
@@ -84,7 +95,8 @@ if __name__ == "__main__":
     # see preduction result with actual digit img
     plt.figure(figsize=(14,8))
     for i in range(6):
-        image = Xtest[i*2].reshape(28, 28)
+        X_no_bias = X_test[:, 1:]
+        image = X_no_bias[i*2].reshape(28, 28)
         plt.subplot(2,3,i+1)
         plt.imshow(image)
         title = f"True label is: {Ytest[i*2]}, predicted as: {Y_pred[i*2]}"
