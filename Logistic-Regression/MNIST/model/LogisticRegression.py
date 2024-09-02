@@ -34,10 +34,26 @@ class LogisticRegression():
         y_pred = sigmoid(z)
         return y_pred
     
+    def errorRate(self, FP, FN, n_samples):
+        return round(((FP + FN) / n_samples) * 100, 2)
+    
+    def accuracy(self, TP, TN, n_samples):
+        return round(((TP + TN) / n_samples) * 100, 2)
+    
+    def precision(self, TP, FN):
+        return round((TP / (TP + FN)) * 100, 2)
+    
+    def recall(self, TP, FP):
+        return round((TP / (TP + FP)) * 100, 2)
+    
+    def specificity(self, TN, FN):
+        return round((TN / (TN + FN)) * 100, 2)
+    
     def get_cost_history(self):
         return self.cost_history
     
     def get_weights(self):
+        self.weights = self.weights[1:]
         return self.weights
     
     def get_weights_image(self, weights):
