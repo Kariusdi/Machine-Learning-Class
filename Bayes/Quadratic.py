@@ -5,8 +5,8 @@ from scipy.stats import norm
 
 # Generate sample data
 #X, y = make_classification(n_features=2, n_redundant=0, n_informative=2, random_state=1, n_clusters_per_class=1)
-#X, y = make_circles(n_samples=200, noise=0.1, factor=0.5, random_state=42)
-X, y = make_moons(n_samples=200, noise=0.2, random_state=42)
+X, y = make_circles(n_samples=200, noise=0.1, factor=0.5, random_state=42)
+#X, y = make_moons(n_samples=200, noise=0.2, random_state=42)
 print(X)
 
 means = [np.mean(X[y == k], axis=0) for k in np.unique(y)]
