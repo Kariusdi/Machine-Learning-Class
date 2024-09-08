@@ -6,6 +6,7 @@ from sklearn.datasets import make_circles, make_classification, make_moons
 #X, y = make_classification(n_features=2, n_redundant=0, n_informative=2, random_state=1, n_clusters_per_class=1)
 #X, y = make_circles(n_samples=200, noise=0.1, factor=0.5, random_state=42)
 X, y = make_moons(n_samples=200, noise=0.2, random_state=42)
+print(X)
 
 means = [np.mean(X[y == k], axis=0) for k in np.unique(y)]
 covariances = [np.cov(X[y == k].T) for k in np.unique(y)]
@@ -30,6 +31,9 @@ grid = np.c_[xx.ravel(), yy.ravel()]
 Z = qda_predict(grid).reshape(xx.shape)
 
 
+##################################################################################
+# PLOTING
+##################################################################################
 plt.figure(figsize=(10, 8))
 plt.contourf(xx, yy, Z, alpha=0.3, cmap='viridis')
 plt.scatter(X[:, 0], X[:, 1], c=y, edgecolor='k', s=100, cmap='viridis')
