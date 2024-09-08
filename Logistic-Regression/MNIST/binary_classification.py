@@ -95,7 +95,7 @@ if __name__ == "__main__":
     # see preduction result with actual digit img
     plt.figure(figsize=(14,8))
     for i in range(6):
-        X_no_bias = X_test[:, 1:]
+        X_no_bias = X_test[:, 1:]     
         image = X_no_bias[i*2].reshape(28, 28)
         plt.subplot(2,3,i+1)
         plt.imshow(image)
