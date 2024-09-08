@@ -63,8 +63,9 @@ plt.show()
 plt.figure(figsize=(10, 8))
 plt.contourf(xx, yy, Z, alpha=0.3, cmap='viridis')
 plt.scatter(X[:, 0], X[:, 1], c=y, edgecolor='k', s=100, cmap='viridis')
+plt.scatter([mean[0] for mean in means], [mean[1] for mean in means], c='red', marker='x')
+
 plt.title('QDA Decision Boundary')
 plt.xlabel('Feature 1')
 plt.ylabel('Feature 2')
 plt.show()
-
