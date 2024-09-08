@@ -6,7 +6,7 @@ def gradientDescent(n_samples, lr, X, y, y_pred):
     return new_weights
 
 def cost_function(n_samples, y, y_pred):
-    return - 1.0 / n_samples * np.sum(y * np.log(y_pred) + (1.0 - y) * np.log(1.0 - y_pred))
+    return - np.mean(np.sum(y * np.log(y_pred) + (1.0 - y) * np.log(1.0 - y_pred)))
 
 def sigmoid(z):
     return 1 / (1 + np.exp(-z))
@@ -53,8 +53,7 @@ class LogisticRegression():
         return self.cost_history
     
     def get_weights(self):
-        self.weights = self.weights[1:]
-        return self.weights
+        return self.weights[1:]
     
     def get_weights_image(self, weights):
         # Reshape weights to 28x28 for MNIST
