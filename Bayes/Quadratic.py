@@ -4,21 +4,43 @@ from sklearn.datasets import make_circles, make_classification, make_moons
 from scipy.stats import norm
 
 # Generate sample data
-#X, y = make_classification(n_features=2, n_redundant=0, n_informative=2, random_state=1, n_clusters_per_class=1)
-X, y = make_circles(n_samples=200, noise=0.1, factor=0.5, random_state=42)
+X, y = make_classification(n_features=2, n_redundant=0, n_informative=2, random_state=1, n_clusters_per_class=1)
+#X, y = make_circles(n_samples=200, noise=0.1, factor=0.5, random_state=42)
 #X, y = make_moons(n_samples=200, noise=0.2, random_state=42)
-print(X)
+#print(X)
 
 means = [np.mean(X[y == k], axis=0) for k in np.unique(y)]
 covariances = [np.cov(X[y == k].T) for k in np.unique(y)]
 priors = [np.mean(y == k) for k in np.unique(y)]
 
+#Mean cov
+def pooled_covariance(X, y):
+
+    classes = np.unique(y)
+    n_features = X.shape[1]
+    pooled_cov = np.zeros((n_features, n_features))
+    n_total = 0
+
+    for c in classes:
+        X_c = X[y == c]
+        n_c = X_c.shape[0]
+        cov_c = np.cov(X_c.T)
+        pooled_cov += (n_c - 1) * cov_c 
+        n_total += n_c - 1
+
+    return pooled_cov / n_total
+cov = pooled_covariance(X, y)
+
 x_range = np.linspace(X[:, 0].min() - 1, X[:, 0].max() + 1, 100)
 y_range = np.linspace(X[:, 1].min() - 1, X[:, 1].max() + 1, 100)
 
 # Calculate the likelihood for each feature
-likelihoods_feature1 = [norm.pdf(x_range, loc=means[k][0], scale=np.sqrt(covariances[k][0, 0])) for k in range(len(means))]
-likelihoods_feature2 = [norm.pdf(y_range, loc=means[k][1], scale=np.sqrt(covariances[k][1, 1])) for k in range(len(means))]
+# Mean
+#likelihoods_feature1 = [norm.pdf(x_range, loc=means[k][0], scale=np.sqrt(cov[0, 0])) for k in range(len(means))]
+#likelihoods_feature2 = [norm.pdf(y_range, loc=means[k][1], scale=np.sqrt(cov[1, 1])) for k in range(len(means))]
+# Pool 
+#likelihoods_feature1 = [norm.pdf(x_range, loc=means[k][0], scale=np.sqrt(covariances[k][0, 0])) for k in range(len(means))]
+#likelihoods_feature2 = [norm.pdf(y_range, loc=means[k][1], scale=np.sqrt(covariances[k][1, 1])) for k in range(len(means))]
 
 def qda_discriminant(x, mean, cov, prior):
     inv_cov = np.linalg.inv(cov)
