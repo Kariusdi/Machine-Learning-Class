@@ -21,7 +21,6 @@ y = y[y != 2]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-# คำนวณค่า mean และ std ของแต่ละ class
 mean1, std1 = np.mean(X_train[y_train == 0]), np.std(X_train[y_train == 0])
 mean2, std2 = np.mean(X_train[y_train == 1]), np.std(X_train[y_train == 1])
 
