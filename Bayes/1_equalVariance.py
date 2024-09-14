@@ -46,28 +46,28 @@ def fixed_parameters():
     # พล็อตกราฟ
     plt.figure(figsize=(15, 5))
     
-    # # Likelihood plot
-    # plt.subplot(1, 3, 1)
-    # plt.plot(x_values, likelihood0_values, label=f'Likelihood Class 0 (Prior={prior0})', color='blue')
-    # plt.plot(x_values, likelihood1_values, label=f'Likelihood Class 1 (Prior={prior1})', color='red')
-    # plt.title('Likelihood (weighted by Prior)')
-    # plt.legend()
+    # Likelihood plot
+    plt.subplot(1, 3, 1)
+    plt.plot(x_values, likelihood0_values, label=f'Likelihood Class 0 (Prior={prior0})', color='blue')
+    plt.plot(x_values, likelihood1_values, label=f'Likelihood Class 1 (Prior={prior1})', color='red')
+    plt.title('Likelihood (weighted by Prior)')
+    plt.legend()
 
     # Posterior plot
     plt.subplot(1, 3, 2)
-    plt.plot(x_values, posterior_values0, label='Posterior Class 0', color='green')
-    plt.plot(x_values, posterior_values1, label='Posterior Class 1', color='orange')
+    plt.plot(x_values, posterior_values0, label=f'Posterior Class 0 (Prior={prior0})', color='green')
+    plt.plot(x_values, posterior_values1, label=f'Posterior Class 1 (Prior={prior1})', color='orange')
     plt.axvline(x=decision_point, color='black', linestyle='--', label='Decision Boundary')
     plt.title('Posterior with Decision Boundary')
     plt.legend()
 
-    # Decision Boundary plot
-    plt.subplot(1, 3, 3)
-    plt.plot(x_values, likelihood0_values, label=f'Likelihood Class 0 (Prior={prior0})', color='blue')
-    plt.plot(x_values, likelihood1_values, label=f'Likelihood Class 1 (Prior={prior1})', color='red')
-    # plt.axvline(x=decision_point, color='black', linestyle='--', label='Decision Boundary')
-    plt.title('Decision Boundary')
-    plt.legend()
+    # # Decision Boundary plot
+    # plt.subplot(1, 3, 3)
+    # plt.plot(x_values, likelihood0_values, label=f'Likelihood Class 0 (Prior={prior0})', color='blue')
+    # plt.plot(x_values, likelihood1_values, label=f'Likelihood Class 1 (Prior={prior1})', color='red')
+    # # plt.axvline(x=decision_point, color='black', linestyle='--', label='Decision Boundary')
+    # plt.title('Decision Boundary')
+    # plt.legend()
 
     plt.show()
 
