@@ -63,7 +63,7 @@ y_pred = lda_predict(X_test, eig_vec, mean_vectors)
 accuracy = np.mean(y_pred == y_test)
 print(f'LDA Accuracy: {accuracy * 100:.2f}%')
 
-x = np.linspace(min(X) - 1, max(X) + 1, 200)
+x = np.linspace(min(X) - 2, max(X) + 2, 200)
 
 likelihood_c1 = norm.pdf(x, mean1, std1)
 likelihood_c2 = norm.pdf(x, mean2, std2)
