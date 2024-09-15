@@ -4,7 +4,6 @@ from scipy.stats import norm
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 
-
 iris = load_iris()
 X = iris.data[:, 0] 
 y = iris.target
