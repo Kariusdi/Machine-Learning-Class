@@ -116,16 +116,16 @@ def contour_LDA(means, cov, slope, intercept, mu_hat_1, mu_hat_2 ):
 plt.figure(figsize=(8, 8))
 
 plt.subplot(2, 1, 1)
-plt.plot(feature_range_x1, likelihood_c1, label='Class $c_1$ (Setosa)', color='black')
-plt.plot(feature_range_x2, likelihood_c2, label='Class $c_2$ (Virginica)', color='green', linestyle='dashed')
+plt.plot(feature_range_x1, likelihood_c1, label='Class $c_1$ (x1)', color='black')
+plt.plot(feature_range_x2, likelihood_c2, label='Class $c_2$ (x2)', color='green', linestyle='dashed')
 plt.xlabel('x')
 plt.ylabel('Likelihood')
 plt.legend()
 
 # Posterior Probability
 plt.subplot(2, 1, 2)
-plt.plot(feature_range_x1, posterior_c1, label='Class $c_1$ (Setosa)', color='black')
-plt.plot(feature_range_x2, posterior_c2, label='Class $c_2$ (Virginica)', color='green', linestyle='dashed')
+plt.plot(feature_range_x1, posterior_c1, label='Class $c_1$ (x1)', color='black')
+plt.plot(feature_range_x2, posterior_c2, label='Class $c_2$ (x2)', color='green', linestyle='dashed')
 plt.xlabel('x')
 plt.ylabel('Posterior Probability')
 plt.legend()
