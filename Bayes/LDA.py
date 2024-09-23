@@ -21,12 +21,12 @@ feature_range_x2 = np.linspace(-6, 6, 200)
 x = np.vstack([x1, x2])
 y = np.concatenate([np.repeat(1, n1), np.repeat(2, n2)])
 
-mu_hat_1 = 1 / n1 * np.sum(x1, axis=0)
-mu_hat_2 = 1 / n2 * np.sum(x2, axis=0)
+mu_c1 = 1 / n1 * np.sum(x1, axis=0)
+mu_c2 = 1 / n2 * np.sum(x2, axis=0)
 
-cov_hat_1 = 1 / (n1 - 1) * np.matmul((x1 - mu_hat_1).T, (x1 - mu_hat_1))
-cov_hat_2 = 1 / (n2 - 1) * np.matmul((x2 - mu_hat_2).T, (x2 - mu_hat_2))
-cov_hat = (cov_hat_1 + cov_hat_2) / 2
+cov_class1 = 1 / (n1 - 1) * np.matmul((x1 - mu_c1).T, (x1 - mu_c1))
+cov_class2 = 1 / (n2 - 1) * np.matmul((x2 - mu_c2).T, (x2 - mu_c2))
+cov_hat = (cov_class1 + cov_class2) / 2
 
 def likelihood(x, mu, sigma):
     """Univariate likelihood calculation for each dimension"""
@@ -58,12 +58,12 @@ def abline(x, slope, intercept):
 cov_inv = np.linalg.inv(cov_hat)
 
 # slope
-slope_vec = np.matmul(cov_inv, (mu_hat_1 - mu_hat_2))
+slope_vec = np.matmul(cov_inv, (mu_c1 - mu_c2))
 slope = -slope_vec[0] / slope_vec[1]
 
 
 # intercept
-intercept_partial = np.log(prior_c2) - np.log(prior_c1) + 0.5 * np.matmul(np.matmul(mu_hat_1.T, cov_inv), mu_hat_1) - 0.5 * np.matmul(np.matmul(mu_hat_2.T, cov_inv), mu_hat_2)
+intercept_partial = np.log(prior_c2) - np.log(prior_c1) + 0.5 * np.matmul(np.matmul(mu_c1.T, cov_inv), mu_c1) - 0.5 * np.matmul(np.matmul(mu_c2.T, cov_inv), mu_c2)
 intercept = intercept_partial / slope_vec[1]
 
 sigma1 = np.sqrt(Sigma[0, 0])  # standard deviation for the first dimension
@@ -78,8 +78,8 @@ pdf_1 = np.array([gaussian_pdf([x, x], mean1, Sigma) for x in feature_range_x1])
 pdf_2 = np.array([gaussian_pdf([x, x], mean2, Sigma) for x in feature_range_x2])
 
 point_grid = np.mgrid[-10:10.1:0.5, -10:10.1:0.5].reshape(2, -1).T
-ll_vals_1 = [Linear_Distriminant(x, mu_hat_1, cov_hat, prior_c1) for x in point_grid]
-ll_vals_2 = [Linear_Distriminant(x, mu_hat_2, cov_hat, prior_c2) for x in point_grid]
+ll_vals_1 = [Linear_Distriminant(x, mu_c1, cov_hat, prior_c1) for x in point_grid]
+ll_vals_2 = [Linear_Distriminant(x, mu_c2, cov_hat, prior_c2) for x in point_grid]
 
 posterior_c1 = pdf_1 * prior_c1
 posterior_c2 = pdf_2 * prior_c2
@@ -134,7 +134,7 @@ plt.tight_layout()
 plt.show()
 
 means = [mean1, mean2]
-plot = contour_LDA(means, Sigma, slope, intercept, mu_hat_1, mu_hat_2 )
+plot = contour_LDA(means, Sigma, slope, intercept, mu_c1, mu_c2 )
 
 
 
