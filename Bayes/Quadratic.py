@@ -7,7 +7,8 @@ from scipy.stats import norm
 X, y = make_classification(n_features=2, n_redundant=0, n_informative=2, random_state=1, n_clusters_per_class=1)
 #X, y = make_circles(n_samples=200, noise=0.1, factor=0.5, random_state=42)
 #X, y = make_moons(n_samples=200, noise=0.2, random_state=42)
-#print(X)
+
+print(X)
 
 means = [np.mean(X[y == k], axis=0) for k in np.unique(y)]
 covariances = [np.cov(X[y == k].T) for k in np.unique(y)]
@@ -36,8 +37,8 @@ y_range = np.linspace(X[:, 1].min() - 1, X[:, 1].max() + 1, 100)
 
 # Calculate the likelihood for each feature
 # Mean
-#likelihoods_feature1 = [norm.pdf(x_range, loc=means[k][0], scale=np.sqrt(cov[0, 0])) for k in range(len(means))]
-#likelihoods_feature2 = [norm.pdf(y_range, loc=means[k][1], scale=np.sqrt(cov[1, 1])) for k in range(len(means))]
+likelihoods_feature1 = [norm.pdf(x_range, loc=means[k][0], scale=np.sqrt(cov[0, 0])) for k in range(len(means))]
+likelihoods_feature2 = [norm.pdf(y_range, loc=means[k][1], scale=np.sqrt(cov[1, 1])) for k in range(len(means))]
 # Pool 
 #likelihoods_feature1 = [norm.pdf(x_range, loc=means[k][0], scale=np.sqrt(covariances[k][0, 0])) for k in range(len(means))]
 #likelihoods_feature2 = [norm.pdf(y_range, loc=means[k][1], scale=np.sqrt(covariances[k][1, 1])) for k in range(len(means))]
