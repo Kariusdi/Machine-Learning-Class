@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 
 # Step 1: Initialize the data
 X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])  # Feature matrix
-y = np.array([0, 0, 0, 1])  # Labels (target)
+y = np.array([0, 0, 0, 1])  # Labels (target) AND
+# y = np.array([0, 1, 1, 1])  # Labels (target) OR
 
 # Adding the intercept term (bias) by adding a column of ones to X
 X = np.hstack([np.ones((X.shape[0], 1)), X])
