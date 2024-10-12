@@ -14,3 +14,5 @@ This is for ML class as a senior year, 2567.
   - [Linear Origin Model](https://github.com/Kariusdi/Machine-Learning-Class/tree/main/Generalization/LinearOriginModel)
 - [Learning Curve](https://github.com/Kariusdi/Machine-Learning-Class67/tree/main/LearningCurve)
 - [Regularization](https://github.com/Kariusdi/Machine-Learning-Class67/tree/main/Regularization)
+- [Logistic Regression](https://github.com/Kariusdi/Machine-Learning-Class/tree/main/Logistic-Regression)
+- [Bayes' Theorem](https://github.com/Kariusdi/Machine-Learning-Class/tree/main/Bayes)
